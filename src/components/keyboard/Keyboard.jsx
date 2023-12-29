@@ -4,7 +4,7 @@ import Key from "./key/Key";
 import { FaDeleteLeft } from "react-icons/fa6";
 import { context } from "../../App";
 const Keyboard = () => {
-  const { handleKeyPressed } = useContext(context);
+  const { handleKeyPressed, disabledLetters } = useContext(context);
   const keyList1 = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"];
   const keyList2 = ["a", "s", "d", "f", "g", "h", "j", "k", "l"];
   const keyList3 = ["z", "x", "c", "v", "b", "n", "m"];
@@ -48,6 +48,7 @@ const Keyboard = () => {
               keyValue={currKey.toUpperCase()}
               isChar={true}
               isDel={false}
+              isDisable={disabledLetters.includes(currKey.toUpperCase())}
             />
           );
         })}
@@ -60,6 +61,7 @@ const Keyboard = () => {
               keyValue={currKey.toUpperCase()}
               isChar={true}
               isDel={false}
+              isDisable={disabledLetters.includes(currKey.toUpperCase())}
             />
           );
         })}
@@ -75,6 +77,7 @@ const Keyboard = () => {
               keyValue={currKey.toUpperCase()}
               isChar={true}
               isDel={false}
+              isDisable={disabledLetters.includes(currKey.toUpperCase())}
             />
           );
         })}

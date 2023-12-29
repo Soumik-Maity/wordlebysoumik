@@ -1,12 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styles from "./Letter.module.css";
 import { context } from "../../../App";
 
 const Letter = ({ pRow, pCol }) => {
-  const { matrix, currPos, correctWord } = useContext(context);
+  const { matrix, currPos, correctWord, setDisabledLetters } =
+    useContext(context);
   const letter = matrix[pRow][pCol];
   const correct = correctWord.toUpperCase()[pCol] === letter.toUpperCase();
-  // console.log(correctWord.toUpperCase()[currPos.currCol]);
   const almost =
     !correct &&
     letter !== " " &&
@@ -14,6 +14,11 @@ const Letter = ({ pRow, pCol }) => {
   const letterState =
     currPos.currRow > pRow &&
     (correct ? "correct" : almost ? "almost" : "wrong");
+  useEffect(() => {
+    if (letter !== "" && !correct && !almost) {
+      setDisabledLetters((prev) => [...prev, letter]);
+    }
+  }, [currPos.currRow]);
   return (
     <div className={`${styles.container}`} id={letterState}>
       {matrix[pRow][pCol]}

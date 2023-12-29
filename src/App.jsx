@@ -16,6 +16,7 @@ function App() {
   const [win, setWin] = useState(false);
   const [isGameOver, setIsGameOver] = useState(false);
   const [showRules, setShowRules] = useState(false);
+  const [disabledLetters, setDisabledLetters] = useState([]);
 
   const { currRow, currCol } = currPos;
 
@@ -39,7 +40,10 @@ function App() {
         matrix[currRow][2] +
         matrix[currRow][3] +
         matrix[currRow][4];
-      if (predictedWord.toUpperCase() + "\r" === correctWord.toUpperCase()) {
+      if (
+        predictedWord.toUpperCase() + "\r" === correctWord.toUpperCase() ||
+        predictedWord.toUpperCase() === correctWord.toUpperCase()
+      ) {
         setIsGameOver(true);
         setWin(true);
         const newPos = { currRow: currRow + 1, currCol: 0 };
@@ -91,6 +95,8 @@ function App() {
         handleKeyPressed,
         win,
         setShowRules,
+        disabledLetters,
+        setDisabledLetters,
       }}
     >
       <Navbar />
