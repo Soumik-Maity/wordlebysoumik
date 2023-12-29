@@ -46,7 +46,10 @@ function App() {
         setCurrPos(newPos);
         //The last two line is written so that once the correct word is guessed, The position moves to next line and allows the green color to fill.
       }
-      if (listOfWords.has(predictedWord.toLowerCase())) {
+      if (
+        listOfWords.has(predictedWord.toLowerCase()) ||
+        listOfWords.has(predictedWord.toLowerCase() + "\r")
+      ) {
         const newPos = { currRow: currRow + 1, currCol: 0 };
         setCurrPos(newPos);
       } else {
