@@ -1,0 +1,45 @@
+.key {
+  height: 40px;
+  width: 35px;
+  background-color: rgba(109, 92, 92, 0.3);
+  color: white;
+
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 20px;
+  font-weight: 700;
+  margin: 6px 3px;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+.key:hover {
+  background-color: rgba(173, 152, 152, 0.3);
+}
+#delKey {
+  font-size: 40px;
+}
+.keySpeacial {
+  height: 40px;
+  width: 60px;
+  background-color: rgba(109, 92, 92, 0.3);
+  color: white;
+
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 15px;
+  font-weight: 900;
+  margin: 6px 3px;
+  padding: 8px 5px;
+  cursor: pointer;
+}
+.keySpeacial:hover {
+  background-color: rgba(173, 152, 152, 0.3);
+}

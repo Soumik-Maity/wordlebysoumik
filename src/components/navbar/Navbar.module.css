@@ -1,0 +1,22 @@
+.container {
+  width: 100vw;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid grey;
+}
+img {
+  width: 45px;
+  height: 45px;
+}
+.heading {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.rules {
+  margin-right: 40px;
+  font-size: xx-large;
+  cursor: pointer;
+}

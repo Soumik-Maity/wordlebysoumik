@@ -1,0 +1,11 @@
+.container {
+  height: 30vh;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.delete-key {
+  font-size: 40px;
+}
