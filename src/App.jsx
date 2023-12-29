@@ -2,7 +2,7 @@ import "./App.css";
 import Keyboard from "./components/keyboard/Keyboard";
 import GuessArea from "./components/guessArea/GuessArea";
 import Navbar from "./components/navbar/Navbar";
-import { createContext, useEffect, useState, useRef } from "react";
+import { createContext, useEffect, useState } from "react";
 import { boardMatrix, generateWordSet } from "./boardMatrix";
 import GameOver from "./components/gameOver/GameOver";
 import ShowRules from "./components/showRules/ShowRules";
