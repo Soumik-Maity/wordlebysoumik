@@ -8,9 +8,9 @@ export const boardMatrix = [
   [" ", " ", " ", " ", " "],
 ];
 export const generateWordSet = async () => {
-  let wordSet;
-  let todaysWord;
   let wordArr;
+  let todaysWord;
+  let wordSet;
   await fetch(wordBank)
     .then((response) => response.text())
     .then((result) => {

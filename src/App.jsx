@@ -1,15 +1,15 @@
 import "./App.css";
-import Keyboard from "./components/keyboard/Keyboard";
-import GuessArea from "./components/guessArea/GuessArea";
 import Navbar from "./components/navbar/Navbar";
+import ShowRules from "./components/showRules/ShowRules";
+import GuessArea from "./components/guessArea/GuessArea";
+import GameOver from "./components/gameOver/GameOver";
+import Keyboard from "./components/keyboard/Keyboard";
+
 import { createContext, useEffect, useState } from "react";
 import { boardMatrix, generateWordSet } from "./boardMatrix";
-import GameOver from "./components/gameOver/GameOver";
-import ShowRules from "./components/showRules/ShowRules";
+
 export const context = createContext();
 function App() {
-  const [matrix, setMatrix] = useState(boardMatrix);
-  const [currPos, setCurrPos] = useState({ currRow: 0, currCol: 0 });
   const [listOfWords, setListOfWords] = useState(new Set());
   const [correctWord, setCorrectWord] = useState("");
 
@@ -18,6 +18,8 @@ function App() {
   const [showRules, setShowRules] = useState(false);
   const [disabledLetters, setDisabledLetters] = useState([]);
 
+  const [matrix, setMatrix] = useState(boardMatrix);
+  const [currPos, setCurrPos] = useState({ currRow: 0, currCol: 0 });
   const { currRow, currCol } = currPos;
 
   useEffect(() => {
